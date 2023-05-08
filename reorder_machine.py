@@ -98,7 +98,8 @@ class ReportSettings:
         "Turkey": 3,
         "Israel": 2,
         "Serbia": 1,
-        "Mexico": -6
+        "Mexico": -6,
+        "Colombia": -5
     }
 
 
@@ -115,8 +116,8 @@ class Products:
 class Settings:
     PRODUCT = Products.EXPRESS
     USE_GEOFIX = False  # will switch all requests to api.delivery-sandbox.com
-    COUNTRY: Optional[str] = "Mexico"  # for GeoFix purposes, optional
-    CITY: Optional[str] = "Mexico"  # for GeoFix purposes, optional
+    COUNTRY: Optional[str] = "Colombia"  # for GeoFix purposes, optional
+    CITY: Optional[str] = "Bogota"  # for GeoFix purposes, optional
     CITY_COORDINATES: Optional[str] = [32.086827, 34.789577]  # [latitude, longitude], for GeoFix purposes
 
 
@@ -133,11 +134,11 @@ else:
 init(autoreset=True)
 
 st.markdown(f"# Reorder machine")
-st.error("First reorder claims, then click cancel to cancel old ones! For Huevos, Pets Table, Inkovsky, Baby Creisy, Vigilancia – change SDD config first to add a new interval!")
-client_name = st.selectbox("Select client", ["Petco", "Sanborns", "El Magico", "Huevos", "Pets Table", "Inkovsky", "Baby Creisy", "Vigilancia Network", "Mr Mascotas"], index=0)
+st.error("First reorder claims, then click cancel to cancel old ones! Orders will be created on the closest available interval!")
+client_name = st.selectbox("Select client", ["Melonn", "Amoblando Pullman", "Bogota test client", "La Mansion", "Sutex", "Laika"], index=0)
 orders_list = st.text_area("Claims to reorder", height=200, help="Copy and paste from the route reports app")
 orders_list = orders_list.split()
-
+st.write(client_name)
 client, token = CLIENT_CLID[client_name], CLIENT_KEYS[client_name]
 
 host = Express.HOST
