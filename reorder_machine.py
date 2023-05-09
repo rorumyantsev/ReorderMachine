@@ -146,7 +146,7 @@ client_name = st.selectbox("Select client", ["Melonn", "Amoblando Pullman", "Bog
 orders_list = st.text_area("Claims to reorder", height=200, help="Copy and paste from the route reports app")
 orders_list = orders_list.split()
 st.write(client_name)
-client, token = CLIENT_CLID[client_name], CLIENT_KEYS[SECRETS_MAP[client_name]]
+client, token = CLIENT_CLID[SECRETS_MAP[client_name]], CLIENT_KEYS[SECRETS_MAP[client_name]]
 
 host = Express.HOST
 http_client = http.client.HTTPSConnection(host)
