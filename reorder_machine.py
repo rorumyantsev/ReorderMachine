@@ -15,6 +15,13 @@ addresses = {
     "test_location": "Moscow, Red Square 1"
 }
 
+SECRETS_MAP = {"Melonn": 0,
+               "Amoblando Pullman": 1,
+               "Bogota test client": 2,
+               "La Mansion": 3,
+               "Sutex": 4,
+               "Laika": 5}
+
 
 class Actions:
     ACCEPT = "accept"
@@ -139,7 +146,7 @@ client_name = st.selectbox("Select client", ["Melonn", "Amoblando Pullman", "Bog
 orders_list = st.text_area("Claims to reorder", height=200, help="Copy and paste from the route reports app")
 orders_list = orders_list.split()
 st.write(client_name)
-client, token = CLIENT_CLID[client_name], CLIENT_KEYS[client_name]
+client, token = CLIENT_CLID[client_name], CLIENT_KEYS[SECRETS_MAP[client_name]]
 
 host = Express.HOST
 http_client = http.client.HTTPSConnection(host)
