@@ -11,7 +11,7 @@ from typing import Optional
 from colorama import init, Fore, Style
 from tenacity import retry, retry_if_exception_type
 
-print('hello world')
+# print('hello world')
 addresses = {
     "test_location": "Moscow, Red Square 1"
 }
@@ -146,7 +146,7 @@ st.error("First reorder claims, then click cancel to cancel old ones! Orders wil
 client_name = st.selectbox("Select client", ["Melonn", "Amoblando Pullman", "Bogota test client", "La Mansion", "Sutex", "Laika"], index=0)
 orders_list = st.text_area("Claims to reorder", height=200, help="Copy and paste from the route reports app")
 orders_list = orders_list.split()
-st.write(client_name)
+# st.write(client_name)
 client, token = CLIENT_CLID[SECRETS_MAP[client_name]], CLIENT_KEYS[SECRETS_MAP[client_name]]
 
 host = Express.HOST
