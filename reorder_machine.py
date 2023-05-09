@@ -11,6 +11,7 @@ from typing import Optional
 from colorama import init, Fore, Style
 from tenacity import retry, retry_if_exception_type
 
+print("hello world")
 addresses = {
     "test_location": "Moscow, Red Square 1"
 }
