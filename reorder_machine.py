@@ -145,7 +145,7 @@ init(autoreset=True)
 
 st.markdown(f"# Reorder machine")
 st.error("First reorder claims, then click cancel to cancel old ones! Orders will be created on the closest available interval!")
-client_name = st.selectbox("Select client", ["Melonn", "Amoblando Pullman", "Bogota test client", "La Mansion", "Sutex", "Laika"], index=0)
+client_name = st.selectbox("Select client", ["Melonn", "Amoblando Pullman", "Bogota test client", "La Mansion", "Sutex", "Laika","testWHper"], index=0)
 orders_list = st.text_area("Claims to reorder", height=200, help="Copy and paste from the route reports app")
 orders_list = orders_list.split()
 # st.write(client_name)
