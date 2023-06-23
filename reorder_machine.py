@@ -21,7 +21,9 @@ SECRETS_MAP = {"Melonn": 0,
                "Bogota test client": 2,
                "La Mansion": 3,
                "Sutex": 4,
-               "Laika": 5}
+               "Laika": 5,
+               "testWHper": 6
+              }
 
 
 class Actions:
